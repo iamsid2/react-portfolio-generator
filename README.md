@@ -1,5 +1,5 @@
 # react-portfolio-generator
-This is react portfolio generator which can be used to make your portfolio just by editing the data
+Want to have an awesome portfolio? Use react portfolio generator to make your portfolio just by adding your data
 
 ## Getting Started
 
