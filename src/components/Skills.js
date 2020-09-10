@@ -1,111 +1,73 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Element } from "react-scroll";
+import { data } from "../details";
 
-class Skills extends React.Component {
-  render() {
-    return (
-      <Element name="skills" className="element">
-        <div className="section" id="about">
-          <div className="container">
-            <div className="h4 text-center mb-4 title">
-              <span className="badge badge-success">Skills</span>
-            </div>
-            <div
-              className="card text-white bg-success"
-              data-aos="fade-up"
-              data-aos-offset="10"
-            >
-              <div className="row">
-                <div className="col-lg-6 col-md-12">
-                  <div className="card-body">
-                    <div className="h4 mt-0 title">Web Development</div>
+//Fuctional Component using React Hook
+const Skills = () => {
+  const [skills] = useState(data.skills);
+  return (
+    <Element name="skills" className="element">
+      <div className="section" id="about">
+        <div className="container">
+          <div className="h4 text-center mb-4 title">
+            <span className="badge badge-success">Skills</span>
+          </div>
+          <div
+            className="card text-white bg-success"
+            data-aos="fade-up"
+            data-aos-offset="10"
+          >
+            <div className="row">
+              <div className="col-lg-6 col-md-12">
+                <div className="card-body">
+                  <div className="h4 mt-0 title">Web Development</div>
+                  {skills["Web Development"].split(",").map((webdev) => (
                     <button type="button" className="btn btn-warning">
-                      Reactjs <i className="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                    <button type="button" className="btn btn-warning">
-                      Nodejs <i className="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                    <button type="button" className="btn btn-warning">
-                      Expressjs{" "}
+                      {webdev}{" "}
                       <i className="fa fa-check" aria-hidden="true"></i>
                     </button>
+                  ))}
+                  <br />
+                  <br />
+                  <div className="h4 mt-0 title">Programming Languages</div>
+                  {skills["Programming Languages"].split(",").map((p_lan) => (
                     <button type="button" className="btn btn-warning">
-                      JavaScript{" "}
-                      <i className="fa fa-check" aria-hidden="true"></i>
+                      {p_lan} <i className="fa fa-check" aria-hidden="true"></i>
                     </button>
-                    <button type="button" className="btn btn-warning">
-                      HTML <i className="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                    <button type="button" className="btn btn-warning">
-                      CSS <i className="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                    <button type="button" className="btn btn-warning">
-                      Bootstrap{" "}
-                      <i className="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                    <br />
-                    <br />
-                    <div className="h4 mt-0 title">Programming Languages</div>
-                    <button type="button" className="btn btn-warning">
-                      Python <i className="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                    <button type="button" className="btn btn-warning">
-                      C++ <i className="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                    <button type="button" className="btn btn-warning">
-                      Java <i className="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                    <button type="button" className="btn btn-warning">
-                      C{" "}
-                      <i className="fa fa-check" aria-hidden="true">
-                        {" "}
-                      </i>
-                    </button>
-                  </div>
+                  ))}
                 </div>
-                <div className="col-lg-6 col-md-12">
-                  <div className="card-body">
-                    <div className="h4 mt-0 title">Database</div>
+              </div>
+              <div className="col-lg-6 col-md-12">
+                <div className="card-body">
+                  <div className="h4 mt-0 title">Database</div>
+                  {skills["Database"].split(",").map((database) => (
                     <button type="button" className="btn btn-warning">
-                      MySQL{" "}
+                      {database}{" "}
                       <i className="fa fa-check" aria-hidden="true">
                         {" "}
                       </i>
                     </button>
+                  ))}
+                  <br />
+                  <br />
+                  <div className="h4 mt-0 title">Others</div>
+                  {skills["Others"].split(",").map((other) => (
                     <button type="button" className="btn btn-warning">
-                      MongoDB <i className="fa fa-check" aria-hidden="true"></i>
-                    </button>
-                    <br />
-                    <br />
-                    <div className="h4 mt-0 title">Others</div>
-                    <button type="button" className="btn btn-warning">
-                      Git{" "}
+                      {other}{" "}
                       <i className="fa fa-check" aria-hidden="true">
                         {" "}
                       </i>
                     </button>
-                    <button type="button" className="btn btn-warning">
-                      Linux{" "}
-                      <i className="fa fa-check" aria-hidden="true">
-                        {" "}
-                      </i>
-                    </button>
-                    <button type="button" className="btn btn-warning">
-                      Data Structure{" "}
-                      <i className="fa fa-check" aria-hidden="true">
-                        {" "}
-                      </i>
-                    </button>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </Element>
-    );
-  }
-}
+      </div>
+    </Element>
+  );
+};
 
 export default Skills;

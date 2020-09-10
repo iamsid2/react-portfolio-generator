@@ -1,13 +1,19 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Sid from "../img/Sid.jpg";
 import bg from "../img/pic1.jpg";
 import { Element } from "react-scroll";
+import { data } from "../details";
+import { Link } from "react-scroll";
 
 class Landing extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      img: data.img,
+      name: data.name,
+      tag: data.tag,
+      cv_link: data.cv_link
+    };
   }
   render() {
     return (
@@ -24,26 +30,22 @@ class Landing extends React.Component {
                 <div className="content-center">
                   <div className="cc-profile-image">
                     <a href="/#">
-                      <img src={Sid} alt="Profile Pic" />
+                      <img src={this.state.img} alt="Profile Pic" />
                     </a>
                   </div>
-                  <div className="h2 title">Siddhant Mund</div>
+                  <div className="h2 title">{this.state.name}</div>
                   <br />
-                  <p className="category text-warning">
-                    MERN Stack Web Developer and Tech Enthusiast
-                  </p>
-                  <a
+                  <p className="category text-warning">{this.state.tag}</p>
+                  <Link
+                    to="contact"
                     className="btn btn-success smooth-scroll mr-2"
-                    href="#contact"
-                    data-aos="zoom-in"
-                    data-aos-anchor="data-aos-anchor"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
                   >
                     Contact Me
-                  </a>
-                  <a
-                    className="btn btn-success"
-                    href="https://drive.google.com/file/d/12OoauSZ004WYKTZPBVaqN24JBcg3wwy3/view?usp=sharing"
-                  >
+                  </Link>
+                  <a className="btn btn-success" href={this.state.cv_link}>
                     Download CV
                   </a>
                 </div>

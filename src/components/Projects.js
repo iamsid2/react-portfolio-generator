@@ -1,8 +1,16 @@
 import React from "react";
 import { Element } from "react-scroll";
+import { data } from "../details";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class Projects extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      projects: data.projects
+    };
+  }
+
   render() {
     return (
       <Element name="projects" className="element">
@@ -11,157 +19,62 @@ class Projects extends React.Component {
             <div className="h4 text-center mb-4 title">
               <span className="badge badge-success">Projects</span>
             </div>
-            <div className="card">
-              <div className="row">
-                <div
-                  className="col-md-3 bg-success"
-                  data-aos="fade-right"
-                  data-aos-offset="50"
-                  data-aos-duration="500"
-                >
-                  <div className="card-body cc-experience-header">
-                    <p style={{ color: "" }}>Jun 2020 - Jul 2020</p>
-                    <div className="h5">MERN-CodeMasters</div>
-                  </div>
-                </div>
-                <div
-                  className="col-md-9"
-                  data-aos="fade-left"
-                  data-aos-offset="50"
-                  data-aos-duration="500"
-                >
-                  <div className="card-body">
-                    <div className="h6">
-                      <i className="fa fa-github"></i>
-                      <a
-                        href="https://github.com/iamsid2/MERN-CodeMasters"
-                        className="text-success"
-                      >
-                        {"  "} MERN-CodeMasters
-                      </a>
+            {this.state.projects.map((project) => (
+              <div className="card">
+                <div className="row">
+                  <div
+                    className="col-md-3 bg-success"
+                    data-aos="fade-right"
+                    data-aos-offset="50"
+                    data-aos-duration="500"
+                  >
+                    <div className="card-body cc-experience-header">
+                      <p style={{ color: "" }}>
+                        {project.from} - {project.to}
+                      </p>
+                      <div className="h5">{project.p_name}</div>
                     </div>
-                    <i className="fa fa-link" aria-hidden="true"></i>
-                    <a
-                      href="http://mern-codemasters.herokuapp.com"
-                      className="text-success"
-                    >
-                      {" "}
-                      http://mern-codemasters.herokuapp.com
-                    </a>
-                    <ul>
-                      <li>
-                        Small social network app built in Reactjs (Redux)
-                        JavaScript, Expressjs, Bootstrap and MongoDB as database
-                      </li>
-                      <li>
-                        Basically It is build for developers of our college
-                        where one can make a profile and we can track the record
-                        of the members which project or work they are doing at
-                        present.
-                      </li>
-                    </ul>
+                  </div>
+                  <div
+                    className="col-md-9"
+                    data-aos="fade-left"
+                    data-aos-offset="50"
+                    data-aos-duration="500"
+                  >
+                    <div className="card-body">
+                      {project.github ? (
+                        <div className="h6">
+                          <i className="fa fa-github"></i>
+                          <a href={project.github} className="text-success">
+                            {"  "} {project.p_name}
+                          </a>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                      {project.link ? (
+                        <div>
+                          <i className="fa fa-link" aria-hidden="true"></i>
+                          <a href={project.link} className="text-success">
+                            {" "}
+                            {project.link}
+                          </a>
+                        </div>
+                      ) : (
+                        ""
+                      )}
+                      <ul>
+                        {project.details.split(". ").map((detail) => (
+                          <div>
+                            <li>{detail}</li>
+                          </div>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="card">
-              <div className="row">
-                <div
-                  className="col-md-3 bg-success"
-                  data-aos="fade-right"
-                  data-aos-offset="50"
-                  data-aos-duration="500"
-                >
-                  <div className="card-body cc-experience-header">
-                    <p>Sep 2018 - Oct 2018</p>
-                    <div className="h5">ASAP</div>
-                  </div>
-                </div>
-                <div
-                  className="col-md-9"
-                  data-aos="fade-left"
-                  data-aos-offset="50"
-                  data-aos-duration="500"
-                >
-                  <div className="card-body">
-                    <div className="h6">
-                      <i className="fa fa-github"></i>
-                      <a
-                        href="https://github.com/iamsid2/ASAP"
-                        className="text-success"
-                      >
-                        {"  "} ASAP
-                      </a>
-                    </div>
-
-                    <ul>
-                      <li>
-                        Built a web-app for proper control of Public Health Care
-                        System
-                      </li>
-                      <li>
-                        An easy ambulance booking service with medicine
-                        inventory and details of available doctors along with
-                        feedback system
-                      </li>
-                      <li>
-                        Technologies Used: Nodejs, Expressjs, JavaScript,
-                        MongoDB, Html, CSS, Bootstrap
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="card">
-              <div className="row">
-                <div
-                  className="col-md-3 bg-success"
-                  data-aos="fade-right"
-                  data-aos-offset="50"
-                  data-aos-duration="500"
-                >
-                  <div className="card-body cc-experience-header">
-                    <p>Feb 2019 - Mar 2019</p>
-                    <div className="h5">WorkExo</div>
-                  </div>
-                </div>
-                <div
-                  className="col-md-9"
-                  data-aos="fade-left"
-                  data-aos-offset="50"
-                  data-aos-duration="500"
-                >
-                  <div className="card-body">
-                    <div className="h6">
-                      <i className="fa fa-github"></i>
-                      <a
-                        href="https://github.com/iamsid2/WorkExo"
-                        className="text-success"
-                      >
-                        {"  "} WorkExo
-                      </a>
-                    </div>
-
-                    <ul>
-                      <li>
-                        Optimised Allocation Algorithm - developed to appoint
-                        workers for specific task in time-efficient manner.
-                      </li>
-                      <li>
-                        Predictive Analysis - Workers’ efficiency analysis
-                        depending upon department, involvement, hourly rate and
-                        standard hours.
-                      </li>
-                      <li>
-                        Technologies Used: HTML5, CSS3, Bootstrap3, JQuery,
-                        Flask, Python Chart.Js
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </Element>

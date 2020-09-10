@@ -1,8 +1,20 @@
 import React from "react";
 import { Element } from "react-scroll";
+import { data } from "../details";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 class About extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      about: data.about,
+      email: data.email,
+      mobile: data.mobile,
+      address: data.address,
+      language: data.language,
+      hobbies: data.hobbies
+    };
+  }
   render() {
     return (
       <Element name="about" className="element">
@@ -16,16 +28,7 @@ class About extends React.Component {
                 <div className="col-lg-6 col-md-12">
                   <div className="card-body">
                     <div className="h4 mt-0 title">About</div>
-                    <p>
-                      Hello! I'm Siddhant -- A MERN stack web developer and
-                      Machine Learning enthusiast .{" "}
-                    </p>
-                    <p>
-                      I have experience in web developemtent and Freelancing.
-                      Strong engineering professional with a Bachelor's degree
-                      focused in Computer Science & Engineering from College of
-                      Engineering and Technology, Bhubaneswar.
-                    </p>
+                    <p>{this.state.about}</p>
                   </div>
                 </div>
                 <div className="col-lg-6 col-md-12 bg-success text-white">
@@ -35,35 +38,31 @@ class About extends React.Component {
                       <div className="col-sm-4">
                         <strong className="text-uppercase">Email:</strong>
                       </div>
-                      <div className="col-sm-8">siddhantmund02@gmail.com</div>
+                      <div className="col-sm-8">{this.state.email}</div>
                     </div>
                     <div className="row mt-3">
                       <div className="col-sm-4">
                         <strong className="text-uppercase">Mobile:</strong>
                       </div>
-                      <div className="col-sm-8">+91-7008847673</div>
+                      <div className="col-sm-8">{this.state.mobile}</div>
                     </div>
                     <div className="row mt-3">
                       <div className="col-sm-4">
                         <strong className="text-uppercase">Address:</strong>
                       </div>
-                      <div className="col-sm-8">
-                        Lane no. 1, Tarini Mandir Road, Bhawanipatna, Odisha
-                      </div>
+                      <div className="col-sm-8">{this.state.address}</div>
                     </div>
                     <div className="row mt-3">
                       <div className="col-sm-4">
                         <strong className="text-uppercase">Language:</strong>
                       </div>
-                      <div className="col-sm-8">English, Hindi, Odia</div>
+                      <div className="col-sm-8">{this.state.language}</div>
                     </div>
                     <div className="row mt-3">
                       <div className="col-sm-4">
                         <strong className="text-uppercase">Hobbies:</strong>
                       </div>
-                      <div className="col-sm-8">
-                        Playing Cricket & Playing Guitar
-                      </div>
+                      <div className="col-sm-8">{this.state.hobbies}</div>
                     </div>
                   </div>
                 </div>

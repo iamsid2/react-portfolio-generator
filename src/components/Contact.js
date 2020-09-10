@@ -1,9 +1,18 @@
 import React from "react";
 import { Element } from "react-scroll";
+import { data } from "../details";
 import "bootstrap/dist/css/bootstrap.min.css";
 import bg from "../img/pic3.jpg";
 
 class Contact extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      address: data.address,
+      email: data.email,
+      mobile: data.mobile
+    };
+  }
   render() {
     return (
       <Element name="contact" className="element">
@@ -22,7 +31,7 @@ class Contact extends React.Component {
                         <div className="col-md-6">
                           <div className="card-body">
                             <form
-                              action="mailto:shaktimund97@gmail.com"
+                              action="mailto:{this.state.email}"
                               method="GET"
                             >
                               <div className="row mb-3">
@@ -66,18 +75,15 @@ class Contact extends React.Component {
                             <p className="mb-0">
                               <strong>Address </strong>
                             </p>
-                            <p className="pb-2">
-                              Lane no. 1, Tarini Mandir Road, Bhawanipatna,
-                              Odisha
-                            </p>
+                            <p className="pb-2">{this.state.address}</p>
                             <p className="mb-0">
                               <strong>Phone</strong>
                             </p>
-                            <p className="pb-2">+91-7008847673</p>
+                            <p className="pb-2">{this.state.mobile}</p>
                             <p className="mb-0">
                               <strong>Email</strong>
                             </p>
-                            <p>siddhantmund02@gmail.com</p>
+                            <p>{this.state.email}</p>
                           </div>
                         </div>
                       </div>

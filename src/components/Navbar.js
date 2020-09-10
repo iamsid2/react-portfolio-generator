@@ -13,38 +13,38 @@ class NavBar extends React.Component {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto"></Nav>
             <Nav defaultActiveKey="#home">
-              <Nav.Link href="#home">
+              <Nav.Link>
                 {" "}
                 <Link to="home" spy={true} smooth={true} duration={500}>
                   Home
                 </Link>
               </Nav.Link>
-              <Nav.Link href="#about">
+              <Nav.Link>
                 <Link to="about" spy={true} smooth={true} duration={500}>
                   About
                 </Link>
               </Nav.Link>
-              <Nav.Link href="#projects">
+              <Nav.Link>
                 <Link to="projects" spy={true} smooth={true} duration={500}>
                   Projects
                 </Link>
               </Nav.Link>
-              <Nav.Link href="#education">
+              <Nav.Link>
                 <Link to="education" spy={true} smooth={true} duration={500}>
                   Education
                 </Link>
               </Nav.Link>
-              <Nav.Link href="#experience">
+              <Nav.Link>
                 <Link to="experience" spy={true} smooth={true} duration={500}>
                   Work Experience
                 </Link>
               </Nav.Link>
-              <Nav.Link href="#skills">
+              <Nav.Link>
                 <Link to="skills" spy={true} smooth={true} duration={500}>
                   Skills
                 </Link>
               </Nav.Link>
-              <Nav.Link href="#contact">
+              <Nav.Link>
                 <Link to="contact" spy={true} smooth={true} duration={500}>
                   Contact
                 </Link>
